@@ -13,7 +13,8 @@ const CampaignSchema = new Schema({
     unique: true,
   },
   platform: {
-    type: String,
+    type: DataTypes.ENUM("Google", "Taboola", "TikTok"),
+    allowNull: false,
     required: true,
     unique: true,
   },
