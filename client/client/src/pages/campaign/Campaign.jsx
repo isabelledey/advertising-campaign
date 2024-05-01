@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { newRequest } from "../../utils/newRequest";
+import { newRequest } from "../../utils/newRequest.js";
 import axios from "axios";
 import Modal from "react-modal";
 // import CampaignCard from "../../components/campaignCard/CampaignCard.jsx";
@@ -62,10 +62,6 @@ const Campaigns = () => {
     refetch();
   });
 
-  const handlePreview = (imageUrl) => {
-    console.log(`Previewing campaign image: ${imageUrl}`);
-    // Implement preview functionality
-  };
 
   return (
     <div className="campaigns">
@@ -94,19 +90,21 @@ const Campaigns = () => {
                 </tr>
               ) : (
                 data.map((campaign) => (
-                  <tr key={campaign.id}>
+                  <tr key={campaign._id}>
                     <td>{campaign.name}</td>
                     <td>{campaign.platform}</td>
                     <td>
                       <a href={campaign.landingPage}>{campaign.landingPage}</a>
                     </td>
                     <td>
-                      <button onClick={() => handleEdit(campaign.id)}>
+                      <button onClick={() => handleEdit(campaign._id)}>
                         Edit
                       </button>
-                      <button onClick={() => handlePreview(campaign.imageUrl)}>
-                        Preview
-                      </button>
+                      <Link to={`/campaign/${campaign._id}`} className="link">
+                        <button>
+                          Preview
+                        </button>
+                      </Link>
                     </td>
                   </tr>
                 ))
