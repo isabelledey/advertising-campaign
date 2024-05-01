@@ -24,7 +24,6 @@ const CampaignCard = ({ item }) => {
           <p>{item.desc}</p>
         </div>
       </div>
-      <hr />
     </>
   );
 };

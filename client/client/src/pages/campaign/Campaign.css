@@ -1,113 +1,105 @@
-.campaign {
-    display: flex;
-    justify-content: center;
-  
-    .container {
-      width: 1400px;
-      padding: 30px 0px;
-      display: flex;
-      gap: 50px;
-  
-      .left {
-        flex: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-  
-        .breadcrumbs {
-          font-weight: 300;
-          text-transform: uppercase;
-          font-size: 13px;
-          color: #555;
-        }
-  
-    
-  
-       
-          .pp {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-          }
-  
-          span {
-            font-size: 14px;
-            font-weight: 500;
-          }
-  
-         
-        }
-  
-        .slider {
-          background-color: #f5f5f5;
-          img {
-            max-height: 500px;
-            object-fit: contain;
-          }
-        }
-  
-        h2 {
-          font-weight: 400;
-        }
-  
-        p {
-          font-weight: 300;
-          line-height: 25px;
-          color: #555;
-        }
-  
-      .right {
-        flex: 1;
-        border: 1px solid lightgray;
-        padding: 20px;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        height: max-content;
-        max-height: 500px;
-        position: sticky;
-        top: 150px;
-  
-  
-        p {
-          color: gray;
-          margin: 10px 0px;
-        }
-  
-        .details {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          font-size: 14px;
-  
-          .item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-  
-            img {
-              width: 20px;
-            }
-          }
-        }
-  
-        .features {
-          .item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 300;
-            color: gray;
-            margin-bottom: 5px;
-  
-            img {
-              width: 14px;
-            }
-          }
-        }
-      }
-    }
-  }
-  
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #555;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.campaign-table {
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+.link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+button {
+  margin-right: 5px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  z-index: 9999;
+}
+
+.modal form div {
+  margin-bottom: 10px;
+}
+
+.modal form label {
+  display: block;
+  font-weight: bold;
+}
+
+.modal form input[type="text"] {
+  width: calc(100% - 16px);
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal form button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.modal form button:last-child {
+  margin-left: 10px;
+  background-color: #aaa;
+}

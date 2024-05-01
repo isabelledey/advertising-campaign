@@ -62,11 +62,9 @@ const Campaigns = () => {
     refetch();
   });
 
-
   return (
     <div className="campaigns">
       <div className="container">
-        <span className="breadcrumbs">Campaign &gt;</span>
         <h1>Campaigns</h1>
         <div className="menu"></div>
         <div className="campaign-table">
@@ -101,9 +99,7 @@ const Campaigns = () => {
                         Edit
                       </button>
                       <Link to={`/campaign/${campaign._id}`} className="link">
-                        <button>
-                          Preview
-                        </button>
+                        <button>Preview</button>
                       </Link>
                     </td>
                   </tr>
