@@ -1,5 +1,5 @@
 import React from "react";
-import "./CampaignPage.scss";
+import "./CampaignPage.css";
 import { useQuery } from "@tanstack/react-query";
 import { newRequest } from "../../utils/newRequest";
 import { useParams } from "react-router-dom";

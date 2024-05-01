@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-query";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Campaigns from "./pages/campaign/Campaign.jsx";
+import { CampaignPage } from "./pages/campaignPage/CampaignPage.jsx";
 
 function App() {
   const queryClient = new QueryClient();
@@ -29,6 +30,10 @@ function App() {
         {
           path: "/",
           element: <Campaigns />,
+        },
+        {
+          path: "/:id",
+          element: <CampaignPage />,
         },
       ],
     },
