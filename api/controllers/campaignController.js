@@ -42,7 +42,14 @@ export const createCampaign = async (req, res) => {
 
 export const updateCampaign = async (id, newData) => {
   try {
-    const updatedCampaign = await Campaign.findByIdAndUpdate(id, newData, { new: true });
+    const updatedCampaign = await Campaign.findByIdAndUpdate(
+      id,
+      newData,
+      { new: true },
+      (err, campaign) => {
+        res.send(campaign);
+      }
+    );
     return updatedCampaign;
   } catch (error) {
     console.error("Error updating campaign:", error);
