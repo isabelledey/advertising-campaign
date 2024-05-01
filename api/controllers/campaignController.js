@@ -26,6 +26,8 @@ export const getCampaign = async (req, res, next) => {
 
 export const createCampaign = async (req, res) => {
   const { name, platform, landingPage, imageUrl } = req.body;
+  const campaigns = await CampaignModel.getAllCampaigns().length();
+  console.log(campaigns);
   const id = campaigns.length + 1;
   const newCampaign = new campaignModel(
     id,
@@ -36,4 +38,14 @@ export const createCampaign = async (req, res) => {
   );
   await newCampaign.save();
   res.status(201).json(newCampaign);
+};
+
+export const updateCampaign = async (id, newData) => {
+  try {
+    const updatedCampaign = await Campaign.findByIdAndUpdate(id, newData, { new: true });
+    return updatedCampaign;
+  } catch (error) {
+    console.error("Error updating campaign:", error);
+    throw new Error("Could not update campaign");
+  }
 };

@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { newRequest } from "../../utils/newRequest";
-import { CampaignCard } from "../../components/campaignCard/CampaignCard.jsx";
+// import CampaignCard from "../../components/campaignCard/CampaignCard.jsx";
 
-export const Campaigns = () => {
+const Campaigns = () => {
   const { search } = useLocation();
 
   const { isLoading, error, data, refetch } = useQuery({
@@ -18,7 +18,7 @@ export const Campaigns = () => {
 
   useEffect(() => {
     refetch();
-  }, [search]);
+  });
 
   const handleEdit = (id) => {
     console.log(`Editing campaign with ID: ${id}`);
@@ -61,13 +61,7 @@ export const Campaigns = () => {
                     <td>{campaign.name}</td>
                     <td>{campaign.platform}</td>
                     <td>
-                      <a
-                        href={campaign.landingPage}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {campaign.landingPage}
-                      </a>
+                      <a href={campaign.landingPage}>{campaign.landingPage}</a>
                     </td>
                     <td>
                       <button onClick={() => handleEdit(campaign.id)}>
@@ -87,3 +81,5 @@ export const Campaigns = () => {
     </div>
   );
 };
+
+export default Campaigns;

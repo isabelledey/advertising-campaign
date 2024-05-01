@@ -7,7 +7,7 @@ import {
   useQuery,
 } from '@tanstack/react-query';
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Campaigns } from './pages/campaign/Campaign';
+import  Campaigns  from './pages/campaign/Campaign';
 
 function App() {
   

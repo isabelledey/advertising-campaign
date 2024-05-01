@@ -5,7 +5,7 @@ import { newRequest } from "../../utils/newRequest";
 
 import "./CampaignCard.css";
 
-export const CampaignCard = ({ item }) => {
+const CampaignCard = ({ item }) => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["campaignCard"],
     queryFn: () =>
@@ -32,3 +32,5 @@ export const CampaignCard = ({ item }) => {
     </>
   );
 };
+
+export default CampaignCard;
